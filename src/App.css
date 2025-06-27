@@ -1,0 +1,250 @@
+#root {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 50%, #0c0c0c 100%);
+}
+
+/* メインタイトルのスタイル */
+h1 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(45deg, #ffffff, #e0e0e0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* サブタイトルのスタイル */
+h2 {
+  color: #b0b0b0;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* 入力コンテナのスタイル */
+.input-container {
+  background: rgba(40, 40, 40, 0.8);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+/* 入力フィールドのスタイル */
+input[type="text"] {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  background: rgba(20, 20, 20, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border-color: #646cff;
+  box-shadow:
+    0 0 0 3px rgba(100, 108, 255, 0.2),
+    0 4px 12px rgba(100, 108, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+input[type="text"]::placeholder {
+  color: #666;
+}
+
+/* ボタンのスタイル */
+button {
+  background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow:
+    0 4px 15px rgba(100, 108, 255, 0.3),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 6px 20px rgba(100, 108, 255, 0.4),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #5a67e8 0%, #4c54d9 100%);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+/* 結果表示のスタイル */
+p {
+  background: rgba(30, 30, 30, 0.8);
+  color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-left: 4px solid #646cff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  text-align: left;
+}
+
+/* エラー表示のスタイル */
+.error {
+  background: linear-gradient(
+    135deg,
+    rgba(220, 38, 38, 0.1) 0%,
+    rgba(153, 27, 27, 0.1) 100%
+  );
+  color: #ff6b6b;
+  border: 2px solid rgba(220, 38, 38, 0.3);
+  border-left: 4px solid #dc2626;
+  box-shadow:
+    0 4px 12px rgba(220, 38, 38, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  animation: errorShake 0.5s ease-in-out;
+}
+
+.error::before {
+  content: "⚠️";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+}
+
+.error {
+  padding-left: 3.5rem;
+}
+
+/* エラーアニメーション */
+@keyframes errorShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-3px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(3px);
+  }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .input-container {
+    padding: 2rem;
+    margin: 0 1rem;
+  }
+
+  input[type="text"] {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+/* アニメーション効果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.input-container {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* 古いスタイルの削除（不要になったもの） */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}

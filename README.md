@@ -80,4 +80,3 @@ str2: FGHIJ
    ```
 
 3. 表示される `localhost` の URL にアクセス
-# every_cording_test
